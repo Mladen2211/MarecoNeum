@@ -1,105 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>J.P. "MARECO" d.o.o. Neum</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-               
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">
-        <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/animate.css">
-        <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/style.css">
+  <title>J.P. "Mareco"</title>
 
-        
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href='<?php echo ROOT_PATH; ?>assets/ico/apple-touch-icon-144-precomposed.png'>
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo ROOT_PATH; ?>assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo ROOT_PATH; ?>assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="<?php echo ROOT_PATH; ?>assets/ico/apple-touch-icon-57-precomposed.png">
+  <!-- Bootstrap core CSS -->
+  <link href="<?php echo ROOT_PATH; ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    </head>
+  <!-- Custom styles for this template -->
+  <link href="<?php echo ROOT_PATH; ?>assets/css/business-frontpage.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/main.css">
+  <link href="<?php echo ROOT_PATH; ?>assets/js/table.js" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/543c89354c.js"></script>
+</head>
 
-    <body>
-    
-    	<!-- Top menu -->
-		<nav class="navbar navbar-fixed-top navbar-no-bg" role="navigation" style="background-color:lightseagreen">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="top-navbar-1">
-					<ul class="nav navbar-nav ">
-						<li><a href="<?php echo ROOT_URL; ?>" style="color:black">Početna</a></li>
-						<li><a href="<?php echo ROOT_URL; ?>shares" style="color:black">Obavijesti</a></li>
-						
-						
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<?php if(isset($_SESSION['is_logged_in'])) : ?>
-						<li><a href="#">Dobrodošli <?php echo $_SESSION['user_data']['name'] ?></a></li>
-						<li><a href="<?php echo ROOT_URL; ?>shares/add">Obavijest</a></li>
-						<li><a href="<?php echo ROOT_URL; ?>shares/upload">Formulari</a></li>
-						<li><a href="<?php echo ROOT_URL; ?>users/logout">Odjava</a></li>
-					  <?php endif; ?>
-					  </ul>
-				</div>
-			</div>
-		</nav>
-    
-    	<!-- Top content -->
-      <div class="top-content">
-        	<div class="container">
-				<div class="row">
-					<div class="col-sm-12 text wow fadeInLeft">
-						
-						</div>
-					</div>
-				</div>
-        </div>
-        
-        <!-- Features -->
-        <div class="container">
+<body>
 
-			<div class="row">
-			  <?php Messages::display(); ?>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mareco</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo ROOT_URL; ?>shares">Obavijesti</a>
+          </li>
+          <?php if(isset($_SESSION['is_logged_in'])) : ?>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dobrodošli <?php echo $_SESSION['user_data']['name'] ?>
+        </a>
+						<ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="<?php echo ROOT_URL; ?>shares/add">Obavijest</a></li>
+              <li><a class="dropdown-item" href="<?php echo ROOT_URL; ?>shares/upload">File upload</a></li>
+              <div class="dropdown-divider"></div>
+							<li><a class="dropdown-item" href="<?php echo ROOT_URL; ?>users/logout">Logout</a></li>
+						</ul>
+					</li>
+          <?php endif; ?>  
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-primary py-5 mb-5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <small class="display-4 text-white mt-5 mb-2"></small>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+  <?php Messages::display(); ?>
 			<?php
-		  require($view);
-		  ?>
-			</div>
-	  
-		  </div>
-        <!-- Footer -->
-        <footer>
-	        <div class="container">
-	        	<div class="row">
-	        		<div class="col-sm-12 footer-copyright">
-                    	J.P. "MARECO" d.o.o. Neum
-                    </div>
-                </div>
-	        </div>
-        </footer>
+			require($view);
+			
+			?>
+</div>
+  <!-- /.container -->
 
+  <!-- Footer -->
+  <footer class="py-5 bg-info">
+    <div class="container">
+      <p class="m-0 text-center text-white"><a>Copyright &copy; Mareco 2019</a></p>
+    </div>
+    <!-- /.container -->
+  </footer>
 
-        <!-- Javascript -->
-        <script src="<?php echo ROOT_PATH; ?>assets/js/jquery-1.11.1.min.js"></script>
-        <script src="<?php echo ROOT_PATH; ?>assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="<?php echo ROOT_PATH; ?>assets/js/jquery.backstretch.min.js"></script>
-        <script src="<?php echo ROOT_PATH; ?>assets/js/wow.min.js"></script>
-        <script src="<?php echo ROOT_PATH; ?>assets/js/retina-1.1.0.min.js"></script>
-        <script src="<?php echo ROOT_PATH; ?>assets/js/waypoints.min.js"></script>
-        <script src="<?php echo ROOT_PATH; ?>assets/js/scripts.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="<?php echo ROOT_PATH; ?>assets/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo ROOT_PATH; ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+</body>
 
 </html>

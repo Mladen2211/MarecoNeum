@@ -33,4 +33,14 @@ class Shares extends Controller{
             die('Pogreška pri dodavanju datoteke');
         }
     }
+    protected function Form(){
+        $fileUpload = new File();
+
+        if (isset($_FILES['file'])) {
+            $fileUpload->uploadFile2($_FILES['file']);
+            header('Location: index');
+        }else{
+            die('Pogreška pri dodavanju datoteke');
+        }
+    }
 }

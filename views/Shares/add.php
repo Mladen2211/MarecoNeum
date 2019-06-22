@@ -1,5 +1,3 @@
-
-
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Share Something</h3>
@@ -14,7 +12,7 @@
             <label for="body">Body</label>
             <textarea type="text" name="body" class="form-control"></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group d-none" id=" hidden">
             <label for="link">Link</label>
             <input type="text" name="link" class="form-control" />
         </div>
@@ -23,4 +21,5 @@
     </form>
   </div>
 </div>
+<br><br>
 
